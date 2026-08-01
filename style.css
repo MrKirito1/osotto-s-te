@@ -1,37 +1,56 @@
 
 :root{--black:#0b0b0b;--white:#fff;--silver:#a3a3a3;--soft:#f4f4f4;--line:rgba(0,0,0,.13)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff;overflow-x:hidden}img{display:block;width:100%}a{text-decoration:none;color:inherit}button,input{font:inherit}
-.loader{position:fixed;inset:0;z-index:100;background:radial-gradient(circle,#2a2a2a,#050505 65%);display:grid;place-items:center;transition:.8s}
-.loader.hide{opacity:0;visibility:hidden}..loader img{
-width:min(520px,70vw);
-filter:invert(1);
-opacity:0;
-transform:scale(.88);
-animation:logo 3s cubic-bezier(.22,.61,.36,1) forwards;
+..loader{
+position:fixed;
+inset:0;
+z-index:100;
+background:#050505;
+display:grid;
+place-items:center;
+opacity:1;
+visibility:visible;
+transition:
+opacity .8s ease,
+visibility .8s ease;
 }
-@keyframes logo{
+
+.loader.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.loader img{
+width:min(520px,70vw);
+opacity:0;
+transform:scale(.96);
+filter:invert(1) blur(10px);
+animation:logoIntro 3.2s ease forwards;
+}
+
+@keyframes logoIntro{
 0%{
 opacity:0;
-transform:scale(.88);
-filter:blur(10px);
+transform:scale(.96);
+filter:invert(1) blur(10px);
 }
 
-35%{
-opacity:1;
-transform:scale(.97);
-filter:blur(2px);
+15%{
+opacity:0;
+transform:scale(.96);
+filter:invert(1) blur(10px);
 }
 
-65%{
+45%{
 opacity:1;
 transform:scale(1);
-filter:blur(0);
+filter:invert(1) blur(0);
 }
 
 100%{
 opacity:1;
 transform:scale(1);
-filter:blur(0);
+filter:invert(1) blur(0);
 }
 }
 .header{position:absolute;top:0;left:0;right:0;height:90px;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;color:#fff;border-bottom:1px solid rgba(255,255,255,.2);transition:.3s}.header.scrolled{position:fixed;background:rgba(5,5,5,.86);backdrop-filter:blur(18px)}.logo img{width:180px;filter:invert(1)}nav{display:flex;gap:32px;font-size:13px}nav a{position:relative}nav a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:#fff;transition:.3s}nav a:hover:after{width:100%}.menu{display:none;background:none;border:0;color:#fff;font-size:24px}
