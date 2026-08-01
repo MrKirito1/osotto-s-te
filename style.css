@@ -2,7 +2,13 @@
 :root{--black:#0b0b0b;--white:#fff;--silver:#a3a3a3;--soft:#f4f4f4;--line:rgba(0,0,0,.13)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff;overflow-x:hidden}img{display:block;width:100%}a{text-decoration:none;color:inherit}button,input{font:inherit}
 .loader{position:fixed;inset:0;z-index:100;background:radial-gradient(circle,#2a2a2a,#050505 65%);display:grid;place-items:center;transition:.8s}
-.loader.hide{opacity:0;visibility:hidden}.loader img{width:min(520px,70vw);filter:invert(1);opacity:0;transform:scale(.92);animation:logo 3s ease-in-out forwards;}
+.loader.hide{opacity:0;visibility:hidden}..loader img{
+width:min(520px,70vw);
+filter:invert(1);
+opacity:0;
+transform:scale(.88);
+animation:logo 3s cubic-bezier(.22,.61,.36,1) forwards;
+}
 @keyframes logo{
 0%{
 opacity:0;
