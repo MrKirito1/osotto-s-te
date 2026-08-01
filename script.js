@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     loader.classList.add("hide");
-  }, 3000);
+  }, 3200);
 });
 const header=document.querySelector('.header');const setHeader=()=>header.classList.toggle('scrolled',scrollY>24);setHeader();addEventListener('scroll',setHeader,{passive:true});
 const menu=document.querySelector('.menu');menu.addEventListener('click',()=>document.body.classList.toggle('open'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('open')));
