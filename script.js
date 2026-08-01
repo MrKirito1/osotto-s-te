@@ -1,11 +1,5 @@
 
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-
-  setTimeout(() => {
-    loader.classList.add("hide");
-  }, 3000);
-});
+window.addEventListener('load',()=>setTimeout(()=>document.querySelector('.loader').classList.add('hide'),700));
 const header=document.querySelector('.header');const setHeader=()=>header.classList.toggle('scrolled',scrollY>24);setHeader();addEventListener('scroll',setHeader,{passive:true});
 const menu=document.querySelector('.menu');menu.addEventListener('click',()=>document.body.classList.toggle('open'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('open')));
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
