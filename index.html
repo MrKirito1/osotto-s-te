@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="OSOTTO premium battaniye koleksiyonu ve bayilik başvurusu.">
+  <title>OSOTTO | Home Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader" aria-hidden="true">
+    <div class="loader-logo">OSOTTO<span>HOME COLLECTION</span></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="OSOTTO ana sayfa">
+      <strong>OSOTTO</strong>
+      <span>HOME COLLECTION</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="#home">Ana Sayfa</a>
+      <a href="#collection">Koleksiyon</a>
+      <a href="#dealership">Bayilik</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-slides">
+        <div class="hero-slide active" style="background-image:url('assets/product-1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('assets/product-2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('assets/product-6.jpg')"></div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Yeni Sezon</p>
+        <h1>Konforun<br><em>yeni hali.</em></h1>
+        <p>Modern desenler, sıcak dokular ve eviniz için seçkin bir koleksiyon.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#collection">Koleksiyonu İncele</a>
+          <a class="btn btn-ghost" href="#dealership">Bayilik Başvurusu</a>
+        </div>
+      </div>
+      <div class="hero-counter"><span id="currentSlide">01</span><i></i><span>03</span></div>
+      <a class="scroll-hint" href="#collection">Aşağı Kaydır <span>↓</span></a>
+    </section>
+
+    <section class="intro">
+      <div class="section-head reveal">
+        <p class="eyebrow dark">OSOTTO</p>
+        <h2>Ev tekstilinde güçlü bir görünüm, sıcak bir dokunuş.</h2>
+      </div>
+      <div class="intro-copy reveal">
+        <p>Özenle seçilmiş desenleri, çift taraflı sıcak dokusu ve modern renk seçenekleriyle OSOTTO koleksiyonu yaşam alanlarına konfor kazandırır.</p>
+      </div>
+    </section>
+
+    <section class="collection" id="collection">
+      <div class="section-title reveal">
+        <div>
+          <p class="eyebrow dark">Koleksiyon</p>
+          <h2>Yeni Gelenler</h2>
+        </div>
+        <p>Ürün özellikleri daha sonra eklenecektir.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card reveal" data-name="Siyah Geometrik">
+          <div class="product-image"><img src="assets/product-1.jpg" alt="Siyah beyaz geometrik OSOTTO battaniye seti"></div>
+          <div class="product-info"><span>01</span><h3>Siyah Geometrik</h3><button class="detail-btn">Detayları Gör</button></div>
+        </article>
+        <article class="product-card reveal" data-name="Bordo Ekose">
+          <div class="product-image"><img src="assets/product-2.jpg" alt="Bordo ekose OSOTTO battaniye seti"></div>
+          <div class="product-info"><span>02</span><h3>Bordo Ekose</h3><button class="detail-btn">Detayları Gör</button></div>
+        </article>
+        <article class="product-card reveal" data-name="Gri Kırmızı Ekose">
+          <div class="product-image"><img src="assets/product-3.jpg" alt="Gri kırmızı ekose OSOTTO battaniye seti"></div>
+          <div class="product-info"><span>03</span><h3>Gri Kırmızı Ekose</h3><button class="detail-btn">Detayları Gör</button></div>
+        </article>
+        <article class="product-card reveal" data-name="Karamel Çizgili">
+          <div class="product-image"><img src="assets/product-4.jpg" alt="Karamel çizgili OSOTTO battaniye seti"></div>
+          <div class="product-info"><span>04</span><h3>Karamel Çizgili</h3><button class="detail-btn">Detayları Gör</button></div>
+        </article>
+        <article class="product-card reveal" data-name="Gri Ekose">
+          <div class="product-image"><img src="assets/product-5.jpg" alt="Gri ekose OSOTTO battaniye seti"></div>
+          <div class="product-info"><span>05</span><h3>Gri Ekose</h3><button class="detail-btn">Detayları Gör</button></div>
+        </article>
+        <article class="product-card reveal" data-name="Lacivert Modern">
+          <div class="product-image"><img src="assets/product-6.jpg" alt="Lacivert modern desenli OSOTTO battaniye seti"></div>
+          <div class="product-info"><span>06</span><h3>Lacivert Modern</h3><button class="detail-btn">Detayları Gör</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-image reveal">
+        <img src="assets/product-4.jpg" alt="OSOTTO battaniye ürün detayı">
+      </div>
+      <div class="feature-content reveal">
+        <p class="eyebrow dark">OSOTTO Farkı</p>
+        <h2>Sıcaklık ve tasarım bir arada.</h2>
+        <div class="feature-list">
+          <div><span>01</span><p>Modern ve zamansız desenler</p></div>
+          <div><span>02</span><p>Yumuşak ve konforlu dokunuş</p></div>
+          <div><span>03</span><p>Güçlü renk alternatifleri</p></div>
+          <div><span>04</span><p>Toptan satış ve bayilik desteği</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dealership" id="dealership">
+      <div class="dealership-copy reveal">
+        <p class="eyebrow">İş Ortaklığı</p>
+        <h2>OSOTTO bayisi olun.</h2>
+        <p>Bayilik ve toptan satış koşulları hakkında bilgi almak için formu doldurun. Başvurunuz WhatsApp üzerinden bize iletilsin.</p>
+      </div>
+
+      <form class="dealer-form reveal" id="dealerForm">
+        <label>Ad Soyad<input type="text" name="name" required></label>
+        <label>Firma Adı<input type="text" name="company"></label>
+        <div class="form-row">
+          <label>Şehir<input type="text" name="city" required></label>
+          <label>Telefon<input type="tel" name="phone" required></label>
+        </div>
+        <label>E-posta<input type="email" name="email"></label>
+        <button class="btn btn-primary" type="submit">WhatsApp ile Başvur</button>
+      </form>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-heading reveal">
+        <p class="eyebrow dark">İletişim</p>
+        <h2>Birlikte çalışalım.</h2>
+      </div>
+      <div class="contact-links reveal">
+        <a href="https://wa.me/905431945858" target="_blank" rel="noopener">
+          <span>WhatsApp</span><strong>0543 194 58 58</strong><b>↗</b>
+        </a>
+        <a href="mailto:osottoturkiye@gmail.com">
+          <span>E-posta</span><strong>osottoturkiye@gmail.com</strong><b>↗</b>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><strong>OSOTTO</strong><span>HOME COLLECTION</span></div>
+    <p>© 2026 OSOTTO. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/905431945858?text=Merhaba%2C%20OSOTTO%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç">
+    <span>WhatsApp</span>
+    <b>↗</b>
+  </a>
+
+  <dialog class="product-modal" id="productModal">
+    <button class="modal-close" aria-label="Pencereyi kapat">×</button>
+    <img id="modalImage" src="" alt="">
+    <div>
+      <p class="eyebrow dark">OSOTTO Koleksiyonu</p>
+      <h2 id="modalTitle"></h2>
+      <p>Bu ürünün ölçü, kumaş ve paket içeriği bilgileri yakında eklenecektir.</p>
+      <a class="btn btn-primary" id="modalWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp'tan Sor</a>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

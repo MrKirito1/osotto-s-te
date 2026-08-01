@@ -1,0 +1,141 @@
+
+:root{
+  --cream:#f4f0e8;
+  --paper:#fbfaf7;
+  --ink:#171714;
+  --muted:#6e6a62;
+  --line:rgba(23,23,20,.14);
+  --gold:#b28a52;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+img{display:block;width:100%}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.loader{position:fixed;inset:0;z-index:999;background:#111;display:grid;place-items:center;transition:opacity .8s ease,visibility .8s ease}
+.loader.hide{opacity:0;visibility:hidden}
+.loader-logo{color:#fff;font:700 clamp(2rem,6vw,5rem)/1 Playfair Display,serif;letter-spacing:.18em;text-align:center;animation:pulse 1.1s ease-in-out infinite alternate}
+.loader-logo span{display:block;font:500 .68rem/1 Manrope,sans-serif;letter-spacing:.5em;margin-top:14px;color:#c7b899}
+@keyframes pulse{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:none}}
+.site-header{height:88px;position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;color:#fff;border-bottom:1px solid rgba(255,255,255,.2)}
+.brand{display:flex;flex-direction:column;align-items:center;line-height:1}
+.brand strong{font:700 1.7rem/1 Playfair Display,serif;letter-spacing:.16em}
+.brand span{font-size:.54rem;letter-spacing:.35em;margin-top:6px}
+.nav{display:flex;gap:34px;font-size:.84rem}
+.nav a{position:relative;padding:12px 0}
+.nav a:after{content:"";position:absolute;left:0;bottom:5px;width:0;height:1px;background:currentColor;transition:.3s}
+.nav a:hover:after{width:100%}
+.menu-toggle{display:none;background:none;border:0;color:inherit;padding:12px}
+.menu-toggle span{display:block;width:25px;height:1px;background:currentColor;margin:6px}
+.hero{min-height:100vh;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
+.hero-slides,.hero-slide,.hero-overlay{position:absolute;inset:0}
+.hero-slide{background-position:center;background-size:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 6s ease}
+.hero-slide.active{opacity:1;transform:scale(1)}
+.hero-overlay{background:linear-gradient(90deg,rgba(10,10,8,.72) 0%,rgba(10,10,8,.38) 48%,rgba(10,10,8,.12) 100%)}
+.hero-content{position:relative;z-index:2;width:min(720px,90vw);margin-left:8vw;padding-top:70px}
+.eyebrow{text-transform:uppercase;letter-spacing:.35em;font-size:.7rem;font-weight:700;color:#d9c49f;margin:0 0 24px}
+.eyebrow.dark{color:var(--gold)}
+.hero h1{font:600 clamp(4rem,8vw,8rem)/.9 Playfair Display,serif;margin:0 0 30px;letter-spacing:-.045em}
+.hero h1 em{font-weight:600;color:#d9c49f}
+.hero-content>p:not(.eyebrow){max-width:560px;font-size:1.04rem;line-height:1.8;color:rgba(255,255,255,.82)}
+.hero-actions{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:16px 23px;border:1px solid transparent;cursor:pointer;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;transition:.3s}
+.btn-primary{background:var(--gold);color:#fff}
+.btn-primary:hover{background:#97713e;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:#111}
+.hero-counter{position:absolute;z-index:2;right:5vw;bottom:48px;display:flex;align-items:center;gap:14px;font-size:.72rem}
+.hero-counter i{display:block;width:80px;height:1px;background:rgba(255,255,255,.55)}
+.scroll-hint{position:absolute;z-index:2;left:5vw;bottom:42px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase}
+.scroll-hint span{font-size:1rem;margin-left:12px}
+.intro{display:grid;grid-template-columns:1.2fr .8fr;gap:10vw;padding:140px 8vw;background:var(--cream)}
+.section-head h2,.section-title h2,.features h2,.dealership h2,.contact h2,.product-modal h2{font:600 clamp(2.7rem,5vw,5.4rem)/1.05 Playfair Display,serif;margin:0;letter-spacing:-.035em}
+.intro-copy{display:flex;align-items:flex-end}
+.intro-copy p{font-size:1.04rem;line-height:1.9;color:var(--muted);max-width:500px}
+.collection{padding:130px 5vw}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}
+.section-title>p{max-width:300px;color:var(--muted);font-size:.9rem}
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.product-card{background:#fff;border:1px solid var(--line);overflow:hidden}
+.product-image{aspect-ratio:1.25;overflow:hidden;background:#eee}
+.product-image img{height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.product-card:hover img{transform:scale(1.045)}
+.product-info{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding:22px}
+.product-info span{color:var(--gold);font-size:.72rem}
+.product-info h3{margin:0;font:600 1.5rem Playfair Display,serif}
+.detail-btn{background:none;border:0;border-bottom:1px solid var(--ink);padding:5px 0;cursor:pointer;font-size:.74rem;text-transform:uppercase;letter-spacing:.08em}
+.features{display:grid;grid-template-columns:1fr 1fr;background:#191916;color:#fff}
+.feature-image{min-height:700px}
+.feature-image img{height:100%;object-fit:cover}
+.feature-content{padding:10vw 8vw;display:flex;flex-direction:column;justify-content:center}
+.feature-list{margin-top:55px}
+.feature-list div{display:grid;grid-template-columns:50px 1fr;align-items:center;border-top:1px solid rgba(255,255,255,.16);padding:22px 0}
+.feature-list div:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.feature-list span{font-size:.72rem;color:#cdb78f}
+.feature-list p{margin:0;font-size:1rem}
+.dealership{display:grid;grid-template-columns:1fr 1fr;gap:8vw;padding:140px 8vw;background:var(--cream)}
+.dealership-copy p:not(.eyebrow){line-height:1.8;color:var(--muted);max-width:520px;margin-top:30px}
+.dealer-form{display:grid;gap:20px}
+.dealer-form label{font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;font-weight:700}
+.dealer-form input{width:100%;margin-top:9px;background:transparent;border:0;border-bottom:1px solid #aaa;padding:13px 0;outline:none}
+.dealer-form input:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.dealer-form .btn{margin-top:10px}
+.contact{padding:130px 8vw}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw}
+.contact-links{display:flex;flex-direction:column}
+.contact-links a{display:grid;grid-template-columns:120px 1fr auto;align-items:center;border-top:1px solid var(--line);padding:28px 0;transition:.25s}
+.contact-links a:last-child{border-bottom:1px solid var(--line)}
+.contact-links a:hover{padding-left:12px}
+.contact-links span{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.contact-links strong{font-size:1.05rem}
+.contact-links b{font-size:1.2rem}
+footer{min-height:210px;padding:60px 5vw;background:#111;color:#fff;display:flex;align-items:center;justify-content:space-between}
+.footer-brand{align-items:flex-start}
+footer p{color:#888;font-size:.72rem}
+.whatsapp-float{position:fixed;z-index:30;right:24px;bottom:24px;background:#161613;color:#fff;padding:14px 18px;display:flex;gap:18px;align-items:center;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.whatsapp-float:hover{background:var(--gold)}
+.product-modal{width:min(960px,92vw);border:0;padding:0;background:#fff;color:#111}
+.product-modal::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
+.product-modal[open]{display:grid;grid-template-columns:1.15fr .85fr;animation:modalIn .35s ease}
+.product-modal img{height:100%;min-height:520px;object-fit:cover}
+.product-modal>div{padding:70px 45px;display:flex;flex-direction:column;justify-content:center}
+.product-modal>div>p:not(.eyebrow){line-height:1.8;color:var(--muted);margin:24px 0 30px}
+.modal-close{position:absolute;right:18px;top:13px;border:0;background:#fff;width:40px;height:40px;font-size:1.8rem;cursor:pointer}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.75,.25,1)}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){
+  .site-header{height:74px;padding:0 20px}
+  .nav{position:fixed;inset:0;background:#111;display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:1.6rem;opacity:0;visibility:hidden;transition:.35s}
+  .menu-open .nav{opacity:1;visibility:visible}
+  .menu-toggle{display:block;z-index:2}
+  .hero-content{margin-left:6vw}
+  .hero h1{font-size:clamp(3.4rem,17vw,5.5rem)}
+  .hero-counter{display:none}
+  .intro,.dealership,.contact,.features{grid-template-columns:1fr}
+  .intro,.dealership,.contact{padding:95px 6vw}
+  .product-grid{grid-template-columns:1fr}
+  .section-title{align-items:flex-start;gap:25px;flex-direction:column}
+  .feature-image{min-height:460px}
+  .feature-content{padding:90px 7vw}
+  .contact-links a{grid-template-columns:90px 1fr auto}
+  .product-modal[open]{grid-template-columns:1fr}
+  .product-modal img{min-height:300px;max-height:380px}
+  .product-modal>div{padding:40px 28px}
+}
+@media(max-width:520px){
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn{width:100%}
+  .form-row{grid-template-columns:1fr}
+  .product-info{grid-template-columns:auto 1fr}
+  .detail-btn{grid-column:2}
+  .contact-links a{grid-template-columns:1fr auto;gap:8px}
+  .contact-links span{grid-column:1/-1}
+  .contact-links strong{font-size:.88rem;word-break:break-word}
+  footer{flex-direction:column;align-items:flex-start;gap:35px}
+  .whatsapp-float span{display:none}
+}
