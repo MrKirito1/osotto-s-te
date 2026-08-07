@@ -1,40 +1,33 @@
 :root{
-
   --black:#0b0b0b;
-
   --ink:#171717;
-
   --muted:#696660;
 
   --gold-dark:#74521f;
-
   --gold:#9c7535;
-
   --gold-light:#b08a48;
 
   --greige-1:#efeae1;
-
   --greige-2:#ddd7cc;
-
   --greige-3:#f0ece4;
 
   --line:rgba(20,20,20,.12);
-
 }
 
+
+/* =========================
+   GENEL
+========================= */
 
 *{
   box-sizing:border-box;
 }
 
-
 html{
   scroll-behavior:smooth;
 }
 
-
 body{
-
   margin:0;
 
   font-family:
@@ -47,52 +40,38 @@ body{
   overflow-x:hidden;
 
   background:#e5dfd4;
-
 }
-
 
 img{
-
   display:block;
-
   width:100%;
-
 }
-
 
 a{
-
   color:inherit;
-
   text-decoration:none;
-
 }
-
 
 button,
 input{
-
   font:inherit;
-
 }
 
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
 .loader{
-
   position:fixed;
-
   inset:0;
 
   z-index:1000;
 
   display:grid;
-
   place-items:center;
 
   background:
-
     radial-gradient(
       circle at center,
       #292929 0%,
@@ -103,23 +82,15 @@ input{
   transition:
     opacity .8s ease,
     visibility .8s ease;
-
 }
-
 
 .loader.hide{
-
   opacity:0;
-
   visibility:hidden;
-
   pointer-events:none;
-
 }
 
-
 .loader img{
-
   width:min(520px,70vw);
 
   filter:invert(1);
@@ -130,33 +101,25 @@ input{
 
   animation:
     logoIntro 1.2s ease forwards;
-
 }
-
 
 @keyframes logoIntro{
-
   to{
-
     opacity:1;
-
     transform:scale(1);
-
   }
-
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header{
-
   position:absolute;
 
   top:0;
-
   left:0;
-
   right:0;
 
   height:90px;
@@ -164,9 +127,7 @@ input{
   z-index:20;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   padding:0 5vw;
@@ -174,16 +135,12 @@ input{
   color:#fff;
 
   border-bottom:
-    1px solid
-    rgba(255,255,255,.20);
+    1px solid rgba(255,255,255,.20);
 
   transition:.35s;
-
 }
 
-
 .header.scrolled{
-
   position:fixed;
 
   background:
@@ -193,14 +150,10 @@ input{
     blur(18px);
 
   box-shadow:
-    0 12px 35px
-    rgba(0,0,0,.16);
-
+    0 12px 35px rgba(0,0,0,.16);
 }
 
-
 .logo img{
-
   width:180px;
 
   max-height:54px;
@@ -208,58 +161,41 @@ input{
   object-fit:contain;
 
   filter:invert(1);
-
 }
 
-
 nav{
-
   display:flex;
 
   gap:32px;
 
   font-size:13px;
-
 }
-
 
 nav a{
-
   position:relative;
-
 }
 
-
 nav a::after{
-
   content:"";
 
   position:absolute;
 
   left:0;
-
   bottom:-7px;
 
   width:0;
-
   height:1px;
 
   background:#fff;
 
   transition:.3s;
-
 }
-
 
 nav a:hover::after{
-
   width:100%;
-
 }
 
-
 .menu{
-
   display:none;
 
   background:none;
@@ -271,20 +207,20 @@ nav a:hover::after{
   font-size:24px;
 
   cursor:pointer;
-
 }
 
 
-/* HERO — SİYAH KISIM */
+/* =========================
+   HERO
+   SİYAH ALAN KORUNUYOR
+========================= */
 
 .hero{
-
   min-height:100vh;
 
   position:relative;
 
   display:flex;
-
   align-items:center;
 
   color:#fff;
@@ -292,25 +228,17 @@ nav a:hover::after{
   overflow:hidden;
 
   background:#080808;
-
 }
-
 
 .slides,
 .slide,
 .overlay{
-
   position:absolute;
-
   inset:0;
-
 }
 
-
 .slide{
-
   background-size:cover;
-
   background-position:center;
 
   opacity:0;
@@ -320,23 +248,15 @@ nav a:hover::after{
   transition:
     opacity 1.2s ease,
     transform 6s ease;
-
 }
-
 
 .slide.active{
-
   opacity:1;
-
   transform:scale(1);
-
 }
 
-
 .overlay{
-
   background:
-
     radial-gradient(
       circle at 75% 30%,
       rgba(255,255,255,.12),
@@ -349,22 +269,17 @@ nav a:hover::after{
       rgba(0,0,0,.44) 55%,
       rgba(0,0,0,.10)
     );
-
 }
 
-
 .hero::after{
-
   content:"";
 
   position:absolute;
-
   inset:0;
 
   pointer-events:none;
 
   background:
-
     linear-gradient(
       115deg,
       transparent 20%,
@@ -374,34 +289,21 @@ nav a:hover::after{
 
   animation:
     sheen 8s infinite;
-
 }
 
-
 @keyframes sheen{
-
   0%,
   30%{
-
-    transform:
-      translateX(-110%);
-
+    transform:translateX(-110%);
   }
-
 
   65%,
   100%{
-
-    transform:
-      translateX(110%);
-
+    transform:translateX(110%);
   }
-
 }
 
-
 .hero-content{
-
   position:relative;
 
   z-index:2;
@@ -409,13 +311,10 @@ nav a:hover::after{
   margin-left:8vw;
 
   width:min(720px,86vw);
-
 }
-
 
 .hero-content > span,
 .feature span{
-
   font-size:11px;
 
   letter-spacing:.34em;
@@ -423,16 +322,13 @@ nav a:hover::after{
   font-weight:700;
 
   color:#c9b38a;
-
 }
-
 
 .statement > span,
 .section-head span,
 .dealership span,
 .contact span,
 dialog span{
-
   font-size:11px;
 
   letter-spacing:.34em;
@@ -440,12 +336,9 @@ dialog span{
   font-weight:700;
 
   color:#8c6b38;
-
 }
 
-
 .hero h1{
-
   font-family:
     Georgia,
     serif;
@@ -458,41 +351,34 @@ dialog span{
   letter-spacing:-.05em;
 
   margin:24px 0;
-
 }
 
-
 .hero p{
-
   max-width:580px;
 
   line-height:1.8;
 
   color:
     rgba(255,255,255,.82);
-
 }
 
-
 .actions{
-
   display:flex;
 
   gap:14px;
 
   margin-top:36px;
-
 }
 
 
-/* BUTTONS */
+/* =========================
+   GENEL BUTONLAR
+========================= */
 
 .btn{
-
   display:inline-flex;
 
   justify-content:center;
-
   align-items:center;
 
   padding:16px 23px;
@@ -511,54 +397,35 @@ dialog span{
   letter-spacing:.09em;
 
   transition:.25s;
-
 }
-
 
 .btn:hover{
-
-  transform:
-    translateY(-2px);
-
+  transform:translateY(-2px);
 }
-
 
 .btn-light{
-
   background:#fff;
-
   color:#111;
-
 }
 
-
 .btn-outline{
-
   color:#fff;
 
   border-color:
     rgba(255,255,255,.6);
-
 }
-
 
 .btn-dark{
-
   background:#111;
-
   color:#fff;
-
 }
 
-
 .btn-gold{
-
   color:#fff;
 
   border-color:#8c672d;
 
   background:
-
     linear-gradient(
       135deg,
       #74521f 0%,
@@ -567,70 +434,59 @@ dialog span{
     );
 
   box-shadow:
-    0 8px 22px
-    rgba(104,74,27,.20);
-
+    0 8px 22px rgba(104,74,27,.20);
 }
 
 
-/* HERO COUNTER */
+/* =========================
+   HERO COUNTER
+========================= */
 
 .counter{
-
   position:absolute;
 
   right:5vw;
-
   bottom:45px;
 
   z-index:2;
 
   display:flex;
-
   align-items:center;
 
   gap:14px;
 
   font-size:12px;
-
 }
 
-
 .counter i{
-
   width:80px;
-
   height:1px;
 
   background:
     rgba(255,255,255,.55);
-
 }
 
 
-/* TÜM AÇIK ALANLAR */
+/* =========================
+   AÇIK ALANLAR
+   TAŞ / GREJ
+========================= */
 
 .statement,
 .collection,
 .dealership,
 .contact{
-
   position:relative;
-
   isolation:isolate;
-
 }
-
 
 .statement::before,
 .collection::before,
 .dealership::before,
 .contact::before{
-
   content:"";
 
   position:absolute;
-
   inset:0;
 
   z-index:-1;
@@ -638,7 +494,6 @@ dialog span{
   pointer-events:none;
 
   background:
-
     radial-gradient(
       circle at 16% 18%,
       rgba(255,255,255,.78) 0%,
@@ -657,14 +512,10 @@ dialog span{
       #d9d2c6 52%,
       #eee8de 100%
     );
-
 }
 
-
 .collection::before{
-
   background:
-
     radial-gradient(
       circle at 82% 16%,
       rgba(255,255,255,.72) 0%,
@@ -683,14 +534,10 @@ dialog span{
       #d3ccbf 50%,
       #ece6dc 100%
     );
-
 }
 
-
 .dealership::before{
-
   background:
-
     radial-gradient(
       circle at 18% 28%,
       rgba(255,255,255,.72) 0%,
@@ -709,14 +556,10 @@ dialog span{
       #d6cfc2 52%,
       #ece6dc 100%
     );
-
 }
 
-
 .contact::before{
-
   background:
-
     radial-gradient(
       circle at 78% 20%,
       rgba(255,255,255,.72) 0%,
@@ -735,23 +578,19 @@ dialog span{
       #d3ccbf 52%,
       #ece6dc 100%
     );
-
 }
 
 
-/* STATEMENT */
+/* =========================
+   STATEMENT
+========================= */
 
 .statement{
-
-  padding:
-    130px 8vw;
+  padding:130px 8vw;
 
   border-bottom:
-    1px solid
-    rgba(0,0,0,.06);
-
+    1px solid rgba(0,0,0,.06);
 }
-
 
 .statement h2,
 .section-head h2,
@@ -759,7 +598,6 @@ dialog span{
 .dealership h2,
 .contact h2,
 dialog h2{
-
   font-family:
     Georgia,
     serif;
@@ -772,68 +610,56 @@ dialog h2{
   letter-spacing:-.04em;
 
   margin:20px 0;
-
 }
 
 
-/* COLLECTION */
+/* =========================
+   COLLECTION
+========================= */
 
 .collection{
-
-  padding:
-    120px 5vw;
-
+  padding:120px 5vw;
 }
 
-
 .section-head{
-
   display:flex;
 
-  justify-content:
-    space-between;
+  justify-content:space-between;
 
   align-items:end;
 
   gap:30px;
 
   margin-bottom:50px;
-
 }
 
-
 .section-head p{
-
   max-width:520px;
 
   color:var(--muted);
 
   line-height:1.7;
-
 }
 
-
 .grid{
-
   display:grid;
 
   grid-template-columns:
     repeat(2,1fr);
 
   gap:28px;
-
 }
 
 
-/* ÜRÜN KARTLARI */
+/* =========================
+   ÜRÜN KARTLARI
+========================= */
 
 .card{
-
   overflow:hidden;
 
   border:
-    1px solid
-    rgba(53,47,39,.10);
+    1px solid rgba(53,47,39,.10);
 
   background:
     rgba(250,248,244,.80);
@@ -842,49 +668,35 @@ dialog h2{
     blur(12px);
 
   box-shadow:
-    0 10px 30px
-    rgba(54,47,36,.06);
+    0 10px 30px rgba(54,47,36,.06);
 
   transition:.42s;
-
 }
 
-
 .card:hover{
-
   transform:
     translateY(-8px);
 
   background:#fbf9f5;
 
   box-shadow:
-    0 25px 62px
-    rgba(54,47,36,.14);
-
+    0 25px 62px rgba(54,47,36,.14);
 }
 
-
 .card > img{
-
   aspect-ratio:1.25;
 
   object-fit:cover;
 
   transition:.7s;
-
 }
-
 
 .card:hover > img{
-
   transform:
     scale(1.045);
-
 }
 
-
 .card-body{
-
   display:grid;
 
   grid-template-columns:
@@ -895,19 +707,13 @@ dialog h2{
   gap:20px;
 
   padding:22px;
-
 }
-
 
 .card-body small{
-
   color:#8c7b62;
-
 }
 
-
 .card-body h3{
-
   margin:0;
 
   font-family:
@@ -915,11 +721,13 @@ dialog h2{
     serif;
 
   font-size:24px;
-
 }
 
 
-/* ALTIN ÜRÜN ÖZELLİKLERİ BUTONU */
+/* =========================
+   ÜRÜN ÖZELLİKLERİ
+   YENİ PREMIUM TASARIM
+========================= */
 
 .product-button{
   appearance:none;
@@ -927,23 +735,36 @@ dialog h2{
 
   position:relative;
 
-  padding:7px 0 6px;
+  padding:
+    7px 0 6px;
 
   border:0;
-  border-bottom:1px solid #9b783f;
+
+  border-bottom:
+    1px solid #9b783f;
+
   border-radius:0;
 
-  background:transparent !important;
-  box-shadow:none;
+  background:
+    transparent !important;
 
-  color:#80612f !important;
+  box-shadow:none !important;
+
+  color:
+    #80612f !important;
 
   cursor:pointer;
 
-  text-transform:uppercase;
+  text-transform:
+    uppercase;
+
   font-size:10px;
+
   font-weight:600;
+
   letter-spacing:.14em;
+
+  white-space:nowrap;
 
   transition:
     color .25s ease,
@@ -951,24 +772,32 @@ dialog h2{
     letter-spacing .25s ease;
 }
 
-
 .product-button:hover{
-  color:#b18a4c !important;
+  color:
+    #b18a4c !important;
 
-  border-bottom-color:#b18a4c;
+  border-bottom-color:
+    #b18a4c;
 
   letter-spacing:.17em;
 
+  background:
+    transparent !important;
+
   transform:none;
+
   filter:none;
-  box-shadow:none;
-}}
+
+  box-shadow:none !important;
+}
 
 
-/* OSOTTO FARKI — SİYAH KALACAK */
+/* =========================
+   OSOTTO FARKI
+   SİYAH KALACAK
+========================= */
 
 .feature{
-
   display:grid;
 
   grid-template-columns:
@@ -977,93 +806,69 @@ dialog h2{
   color:#fff;
 
   background:
-
     linear-gradient(
       145deg,
       #111,
       #050505
     );
-
 }
 
-
 .feature > img{
-
   height:100%;
 
   min-height:700px;
 
   object-fit:cover;
-
 }
 
-
 .feature > div{
-
-  padding:
-    10vw 8vw;
+  padding:10vw 8vw;
 
   display:flex;
 
   flex-direction:column;
 
   justify-content:center;
-
 }
-
 
 .feature ul{
-
   list-style:none;
 
-  margin:
-    50px 0 0;
+  margin:50px 0 0;
 
   padding:0;
-
 }
 
-
 .feature li{
-
   display:flex;
 
   align-items:center;
 
   gap:24px;
 
-  padding:
-    22px 0;
+  padding:22px 0;
 
   border-top:
-    1px solid
-    rgba(255,255,255,.16);
-
+    1px solid rgba(255,255,255,.16);
 }
-
 
 .feature li:last-child{
-
   border-bottom:
-    1px solid
-    rgba(255,255,255,.16);
-
+    1px solid rgba(255,255,255,.16);
 }
 
-
 .feature li b{
-
   width:50px;
 
   color:#b59a6c;
-
 }
 
 
-/* BAYİLİK */
+/* =========================
+   BAYİLİK
+========================= */
 
 .dealership{
-
   display:grid;
 
   grid-template-columns:
@@ -1071,63 +876,47 @@ dialog h2{
 
   gap:8vw;
 
-  padding:
-    130px 8vw;
-
+  padding:130px 8vw;
 }
 
-
 .dealership p{
-
   color:var(--muted);
 
   line-height:1.8;
-
 }
 
-
 .dealership form{
-
   display:grid;
 
   gap:18px;
-
 }
 
-
 .dealership input{
-
   border:0;
 
   border-bottom:
-    1px solid
-    rgba(44,39,32,.25);
+    1px solid rgba(44,39,32,.25);
 
-  padding:
-    18px 0;
+  padding:18px 0;
 
   outline:none;
 
   color:var(--ink);
 
-  background:
-    transparent;
-
+  background:transparent;
 }
-
 
 .dealership input:focus{
-
   border-color:
     var(--gold-dark);
-
 }
 
 
-/* İLETİŞİM */
+/* =========================
+   İLETİŞİM
+========================= */
 
 .contact{
-
   display:grid;
 
   grid-template-columns:
@@ -1135,16 +924,13 @@ dialog h2{
 
   gap:8vw;
 
-  padding:
-    120px 8vw;
-
+  padding:120px 8vw;
 }
 
 
-/* BURADA OK YOK */
+/* GRİ OK YOK */
 
 .links a{
-
   display:grid;
 
   grid-template-columns:
@@ -1152,111 +938,85 @@ dialog h2{
 
   align-items:center;
 
-  padding:
-    28px 0;
+  padding:28px 0;
 
   border-top:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   transition:.25s;
-
 }
-
 
 .links a:last-child{
-
   border-bottom:
-    1px solid
-    var(--line);
-
+    1px solid var(--line);
 }
-
 
 .links a:hover{
-
   padding-left:12px;
-
 }
-
 
 .links small{
-
   color:#746d63;
 
-  text-transform:
-    uppercase;
+  text-transform:uppercase;
 
   letter-spacing:.08em;
-
 }
-
 
 .links strong{
-
   font-size:17px;
-
 }
 
 
-/* FOOTER — SİYAH KALACAK */
+/* =========================
+   FOOTER
+   SİYAH KALACAK
+========================= */
 
 footer{
-
   display:flex;
 
   align-items:center;
 
-  justify-content:
-    space-between;
+  justify-content:space-between;
 
-  padding:
-    60px 5vw;
+  padding:60px 5vw;
 
   color:#fff;
 
   background:#0b0b0b;
-
 }
 
-
 footer img{
-
   width:230px;
 
   filter:invert(1);
-
 }
 
-
 footer span{
-
   color:#888;
 
   font-size:12px;
-
 }
 
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
 
 .wa{
-
   position:fixed;
 
   right:24px;
-
   bottom:24px;
 
   z-index:30;
 
-  padding:
-    14px 18px;
+  padding:14px 18px;
 
   color:#fff;
 
   background:
-
     linear-gradient(
       135deg,
       #74521f,
@@ -1268,11 +1028,9 @@ footer span{
     1px solid #8f6b31;
 
   box-shadow:
-    0 10px 30px
-    rgba(0,0,0,.20);
+    0 10px 30px rgba(0,0,0,.20);
 
-  text-transform:
-    uppercase;
+  text-transform:uppercase;
 
   font-size:11px;
 
@@ -1280,13 +1038,23 @@ footer span{
 
   letter-spacing:.09em;
 
+  transition:.25s;
+}
+
+.wa:hover{
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 35px rgba(0,0,0,.28);
 }
 
 
-/* ÜRÜN DETAY MODALI */
+/* =========================
+   ÜRÜN MODALI
+========================= */
 
 dialog{
-
   width:
     min(1000px,92vw);
 
@@ -1297,25 +1065,18 @@ dialog{
   background:#f5f1e9;
 
   box-shadow:
-    0 30px 90px
-    rgba(0,0,0,.30);
-
+    0 30px 90px rgba(0,0,0,.30);
 }
 
-
 dialog::backdrop{
-
   background:
     rgba(0,0,0,.80);
 
   backdrop-filter:
     blur(5px);
-
 }
 
-
 dialog[open]{
-
   display:grid;
 
   grid-template-columns:
@@ -1323,71 +1084,51 @@ dialog[open]{
 
   animation:
     modalIn .32s ease;
-
 }
 
-
 @keyframes modalIn{
-
   from{
-
     opacity:0;
 
     transform:
       translateY(22px)
       scale(.985);
-
   }
 
-
   to{
-
     opacity:1;
 
     transform:none;
-
   }
-
 }
 
-
 dialog > img{
-
   height:100%;
 
   min-height:570px;
 
   object-fit:cover;
-
 }
 
-
 .modal-content{
-
-  padding:
-    58px 48px;
+  padding:58px 48px;
 
   display:flex;
 
   flex-direction:column;
 
   justify-content:center;
-
 }
 
-
 .close{
-
   position:absolute;
 
   top:10px;
-
   right:15px;
 
   z-index:5;
 
   width:42px;
-
   height:42px;
 
   border:0;
@@ -1399,14 +1140,14 @@ dialog > img{
   background:#f5f1e9;
 
   font-size:30px;
-
 }
 
 
-/* ÖLÇÜLER */
+/* =========================
+   ÜRÜN ÖLÇÜLERİ
+========================= */
 
 .product-specs{
-
   display:grid;
 
   grid-template-columns:
@@ -1414,130 +1155,100 @@ dialog > img{
 
   gap:14px;
 
-  margin:
-    25px 0;
-
+  margin:25px 0;
 }
 
-
 .spec-box{
-
   padding:22px;
 
   border:
-    1px solid
-    rgba(58,50,39,.10);
+    1px solid rgba(58,50,39,.10);
 
   background:
-
     linear-gradient(
       145deg,
       #ebe5db,
       #ded7cc
     );
-
 }
 
-
 .spec-box small{
-
   color:#7d6948;
 
   font-size:10px;
 
   letter-spacing:.16em;
-
 }
 
-
 .spec-box h3{
-
-  margin:
-    12px 0;
+  margin:12px 0;
 
   font-family:
     Georgia,
     serif;
 
   font-size:19px;
-
 }
 
-
 .spec-box p{
-
-  margin:
-    7px 0;
+  margin:7px 0;
 
   color:#625d55;
 
   font-size:14px;
-
 }
 
-
 .wholesale-note{
-
   color:#625d55;
 
   line-height:1.7;
 
   font-size:14px;
-
 }
 
 
-/* SCROLL ANİMASYONU */
+/* =========================
+   SCROLL ANİMASYONLARI
+========================= */
 
 .reveal{
-
   opacity:0;
 
   transform:
     translateY(38px);
 
   transition:
-
     opacity .85s ease,
-
     transform .85s
     cubic-bezier(.22,.61,.36,1);
-
 }
 
-
 .reveal.visible{
-
   opacity:1;
 
   transform:none;
-
 }
 
 
-/* MOBİL */
+/* =========================
+   MOBİL
+========================= */
 
 @media(max-width:850px){
 
   .header{
-
     height:74px;
 
-    padding:
-      0 20px;
-
+    padding:0 20px;
   }
 
 
   .logo img{
-
     width:145px;
-
   }
 
 
   nav{
-
     position:fixed;
 
     inset:0;
@@ -1565,42 +1276,33 @@ dialog > img{
     visibility:hidden;
 
     transition:.3s;
-
   }
 
 
   body.menu-open nav{
-
     opacity:1;
 
     visibility:visible;
-
   }
 
 
   .menu{
-
     display:block;
 
     position:relative;
 
     z-index:30;
-
   }
 
 
   .hero-content{
-
     margin-left:6vw;
-
   }
 
 
   .hero h1{
-
     font-size:
       clamp(48px,15vw,78px);
-
   }
 
 
@@ -1608,19 +1310,14 @@ dialog > img{
   .collection,
   .dealership,
   .contact{
-
-    padding:
-      90px 6vw;
-
+    padding:90px 6vw;
   }
 
 
   .section-head{
-
     align-items:flex-start;
 
     flex-direction:column;
-
   }
 
 
@@ -1628,96 +1325,67 @@ dialog > img{
   .feature,
   .dealership,
   .contact{
-
-    grid-template-columns:
-      1fr;
-
+    grid-template-columns:1fr;
   }
 
 
   .feature > img{
-
     min-height:430px;
-
   }
 
 
   .feature > div{
-
-    padding:
-      90px 6vw;
-
+    padding:90px 6vw;
   }
 
 
   .card-body{
-
     grid-template-columns:
       auto 1fr;
-
   }
 
 
   .product-button{
-
     grid-column:2;
 
     justify-self:start;
-
   }
 
 
   .links a{
-
     grid-template-columns:
       95px 1fr;
-
   }
 
 
   dialog[open]{
-
-    grid-template-columns:
-      1fr;
-
+    grid-template-columns:1fr;
   }
 
 
   dialog > img{
-
     min-height:300px;
 
     max-height:380px;
-
   }
 
 
   .modal-content{
-
-    padding:
-      40px 28px;
-
+    padding:40px 28px;
   }
 
 
   .product-specs{
-
-    grid-template-columns:
-      1fr;
-
+    grid-template-columns:1fr;
   }
 
 
   footer{
+    flex-direction:column;
 
-    flex-direction:
-      column;
-
-    align-items:
-      flex-start;
+    align-items:flex-start;
 
     gap:28px;
-
   }
 
 }
