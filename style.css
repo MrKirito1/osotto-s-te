@@ -761,21 +761,14 @@ dialog h2{
 
 .contact{
   display:grid;
-
-  grid-template-columns:
-    .8fr 1.2fr;
-
+  grid-template-columns:.8fr 1.2fr;
   gap:8vw;
-
-  padding:
-    120px 8vw;
+  padding:120px 8vw;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.84),
-      rgba(232,232,229,.95)
-    );
+    radial-gradient(circle at 80% 25%, rgba(255,255,255,.68) 0%, transparent 32%),
+    radial-gradient(circle at 15% 75%, rgba(185,180,170,.25) 0%, transparent 35%),
+    linear-gradient(135deg,#eeeae3 0%,#dedbd4 50%,#f1eee8 100%);
 }
 
 
