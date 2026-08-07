@@ -7,15 +7,20 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-/* Sayfa açılır açılmaz en üste git */
-window.scrollTo(0, 0);
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
 
-window.addEventListener("beforeunload", () => {
-  window.scrollTo(0, 0);
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 10);
 });
 
 window.addEventListener("pageshow", () => {
-  window.scrollTo(0, 0);
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 10);
 });
 
 
