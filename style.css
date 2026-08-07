@@ -437,18 +437,14 @@ dialog span{
 /* STATEMENT */
 
 .statement{
-  padding:
-    130px 8vw;
+  padding:130px 8vw;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.78),
-      rgba(238,238,235,.92)
-    );
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.72) 0%, transparent 32%),
+    radial-gradient(circle at 85% 70%, rgba(190,185,175,.28) 0%, transparent 36%),
+    linear-gradient(135deg,#eeeae3 0%,#dedbd4 50%,#f1eee8 100%);
 
-  border-bottom:
-    1px solid rgba(0,0,0,.06);
+  border-bottom:1px solid rgba(0,0,0,.06);
 }
 
 
