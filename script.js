@@ -11,16 +11,31 @@ if (window.location.hash) {
   history.replaceState(null, "", window.location.pathname + window.location.search);
 }
 
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+window.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
+});
+
 window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+  });
+
   setTimeout(() => {
     window.scrollTo(0, 0);
-  }, 10);
+  }, 100);
 });
 
 window.addEventListener("pageshow", () => {
+  window.scrollTo(0, 0);
+
   setTimeout(() => {
     window.scrollTo(0, 0);
-  }, 10);
+  }, 100);
 });
 
 
