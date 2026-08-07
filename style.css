@@ -625,29 +625,22 @@ dialog h2{
 }
 
 
-.card button:hover{
-  opacity:.5;
+..card button:hover{
+  opacity:1;
+
+  background:linear-gradient(
+    135deg,
+    #b99655,
+    #d0ae69,
+    #9b7738
+  );
+
+  color:#111;
+
+  transform:translateY(-2px);
+
+  box-shadow:0 8px 22px rgba(110,82,32,.28);
 }
-
-
-/* FEATURE */
-
-.feature{
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  background:
-    linear-gradient(
-      145deg,
-      #111,
-      #050505
-    );
-
-  color:#fff;
-}
-
 
 .feature > img{
   height:100%;
