@@ -712,21 +712,14 @@ dialog h2{
 
 .dealership{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:8vw;
-
-  padding:
-    130px 8vw;
+  padding:130px 8vw;
 
   background:
-    linear-gradient(
-      135deg,
-      #f7f7f4,
-      #e8e8e5
-    );
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.68) 0%, transparent 32%),
+    radial-gradient(circle at 80% 70%, rgba(185,180,170,.26) 0%, transparent 36%),
+    linear-gradient(135deg,#eeeae3 0%,#dedbd4 50%,#f1eee8 100%);
 }
 
 
