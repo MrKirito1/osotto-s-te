@@ -1,4 +1,14 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
 
+window.addEventListener("beforeunload", () => {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
 window.addEventListener('load',()=>setTimeout(()=>document.querySelector('.loader').classList.add('hide'),700));
 const header=document.querySelector('.header');const setHeader=()=>header.classList.toggle('scrolled',scrollY>24);setHeader();addEventListener('scroll',setHeader,{passive:true});
 const menu=document.querySelector('.menu');menu.addEventListener('click',()=>document.body.classList.toggle('open'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('open')));
