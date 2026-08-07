@@ -1,160 +1,246 @@
-/* =========================================================
-   OSOTTO
-   ========================================================= */
-
-/* Sayfa yenilenince eski scroll konumuna dönmesini engeller */
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
+/* Yenilemede section adresini temizle */
 if (window.location.hash) {
-  history.replaceState(null, "", window.location.pathname + window.location.search);
+  history.replaceState(
+    null,
+    "",
+    window.location.pathname + window.location.search
+  );
 }
 
-document.documentElement.scrollTop = 0;
-document.body.scrollTop = 0;
+
+/* SAYFAYI HER YENİLEMEDE EN YUKARI AL */
+function forceTop() {
+
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  window.scrollTo(0, 0);
+}
+
+forceTop();
+
 
 window.addEventListener("DOMContentLoaded", () => {
-  window.scrollTo(0, 0);
+
+  forceTop();
+
 });
 
-window.addEventListener("load", () => {
-  window.scrollTo(0, 0);
+
+window.addEventListener("pageshow", () => {
+
+  forceTop();
 
   requestAnimationFrame(() => {
-    window.scrollTo(0, 0);
+    forceTop();
   });
 
   setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 100);
-});
-
-window.addEventListener("pageshow", () => {
-  window.scrollTo(0, 0);
+    forceTop();
+  }, 50);
 
   setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 100);
+    forceTop();
+  }, 150);
+
 });
 
 
-/* Loader */
 window.addEventListener("load", () => {
 
-  window.scrollTo(0, 0);
+  forceTop();
 
-  const loader = document.querySelector(".loader");
+  const loader =
+    document.getElementById("loader");
 
   if (loader) {
+
     setTimeout(() => {
+
       loader.classList.add("hide");
+
     }, 700);
+
   }
+
+  requestAnimationFrame(() => {
+    forceTop();
+  });
+
+  setTimeout(() => {
+    forceTop();
+  }, 50);
+
+  setTimeout(() => {
+    forceTop();
+  }, 150);
 
 });
 
 
-/* Header */
-const header = document.querySelector(".header");
+/* HEADER */
 
-const setHeader = () => {
+const header =
+  document.getElementById("header");
+
+
+function updateHeader() {
+
   if (!header) return;
 
   header.classList.toggle(
     "scrolled",
     window.scrollY > 24
   );
-};
 
-setHeader();
+}
+
+
+updateHeader();
+
 
 window.addEventListener(
   "scroll",
-  setHeader,
-  { passive: true }
+  updateHeader,
+  { passive:true }
 );
 
 
-/* Mobil Menü */
-const menu = document.querySelector(".menu");
+/* MOBİL MENÜ */
 
-if (menu) {
-
-  menu.addEventListener("click", () => {
-    document.body.classList.toggle("open");
-  });
-
-}
-
-document.querySelectorAll("nav a").forEach(link => {
-
-  link.addEventListener("click", () => {
-    document.body.classList.remove("open");
-  });
-
-});
+const menuButton =
+  document.getElementById("menuButton");
 
 
-/* Scroll animasyonları */
-const reveals = document.querySelectorAll(".reveal");
+if (menuButton) {
 
-if ("IntersectionObserver" in window) {
+  menuButton.addEventListener(
+    "click",
+    () => {
 
-  const observer = new IntersectionObserver(
-    entries => {
+      document.body.classList.toggle(
+        "menu-open"
+      );
 
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.12
     }
   );
 
-  reveals.forEach(item => {
-    observer.observe(item);
+}
+
+
+document
+  .querySelectorAll("nav a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        document.body.classList.remove(
+          "menu-open"
+        );
+
+      }
+    );
+
   });
 
-} else {
 
-  reveals.forEach(item => {
+/* SCROLL ANİMASYONLARI */
+
+const revealItems =
+  document.querySelectorAll(".reveal");
+
+
+if ("IntersectionObserver" in window) {
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold:0.12
+      }
+
+    );
+
+
+  revealItems.forEach(item => {
+
+    observer.observe(item);
+
+  });
+
+}
+
+else {
+
+  revealItems.forEach(item => {
+
     item.classList.add("visible");
+
   });
 
 }
 
 
-/* Hero Slider */
-const slides = [
-  ...document.querySelectorAll(".slide")
-];
+/* HERO SLIDER */
 
-const current = document.getElementById("current");
+const slides =
+  [...document.querySelectorAll(".slide")];
+
+const currentSlide =
+  document.getElementById("currentSlide");
 
 let slideIndex = 0;
+
 
 if (slides.length > 1) {
 
   setInterval(() => {
 
-    slides[slideIndex].classList.remove("active");
+    slides[slideIndex]
+      .classList.remove("active");
+
 
     slideIndex =
-      (slideIndex + 1) % slides.length;
+      (slideIndex + 1) %
+      slides.length;
 
-    slides[slideIndex].classList.add("active");
 
-    if (current) {
-      current.textContent =
-        String(slideIndex + 1).padStart(2, "0");
+    slides[slideIndex]
+      .classList.add("active");
+
+
+    if (currentSlide) {
+
+      currentSlide.textContent =
+        String(slideIndex + 1)
+          .padStart(2, "0");
+
     }
 
   }, 4800);
@@ -162,53 +248,71 @@ if (slides.length > 1) {
 }
 
 
-/* Bayilik Formu */
-const form = document.getElementById("form");
+/* BAYİLİK FORMU */
 
-if (form) {
+const dealerForm =
+  document.getElementById("dealerForm");
 
-  form.addEventListener("submit", event => {
 
-    event.preventDefault();
+if (dealerForm) {
 
-    const data = new FormData(form);
+  dealerForm.addEventListener(
+    "submit",
+    event => {
 
-    const text =
+      event.preventDefault();
+
+
+      const data =
+        new FormData(dealerForm);
+
+
+      const text =
+
 `Merhaba, OSOTTO toptan satış / bayilik başvurusu yapmak istiyorum.
 
-Ad Soyad: ${data.get("name") || ""}
-Firma: ${data.get("company") || ""}
-Şehir: ${data.get("city") || ""}
-Telefon: ${data.get("phone") || ""}
-E-posta: ${data.get("email") || ""}`;
+Ad Soyad: ${data.get("name") || "-"}
+Firma: ${data.get("company") || "-"}
+Şehir: ${data.get("city") || "-"}
+Telefon: ${data.get("phone") || "-"}
+E-posta: ${data.get("email") || "-"}`;
 
-    const url =
-      "https://wa.me/905431945858?text=" +
-      encodeURIComponent(text);
 
-    window.open(
-      url,
-      "_blank",
-      "noopener"
-    );
+      const url =
 
-  });
+        "https://wa.me/905431945858?text=" +
+
+        encodeURIComponent(text);
+
+
+      window.open(
+        url,
+        "_blank",
+        "noopener"
+      );
+
+    }
+  );
 
 }
 
 
-/* Ürün Detay Modalı */
+/* ÜRÜN DETAYLARI */
+
 const modal =
-  document.getElementById("modal");
+  document.getElementById("productModal");
 
 const modalTitle =
   document.getElementById("modalTitle");
 
-const modalImg =
-  document.getElementById("modalImg");
+const modalImage =
+  document.getElementById("modalImage");
 
-const modalLink =
-  document.getElementById("modalLink");
+const modalWhatsapp =
+  document.getElementById("modalWhatsapp");
+
+const modalClose =
+  document.getElementById("modalClose");
 
 
 document
@@ -216,9 +320,13 @@ document
   .forEach(card => {
 
     const button =
-      card.querySelector("button");
+      card.querySelector(
+        ".product-button"
+      );
+
 
     if (!button) return;
+
 
     button.addEventListener(
       "click",
@@ -227,36 +335,57 @@ document
         const name =
           card.dataset.name || "";
 
+
         const image =
           card.querySelector("img");
 
+
         if (modalTitle) {
-          modalTitle.textContent = name;
-        }
 
-        if (modalImg && image) {
-
-          modalImg.src = image.src;
-          modalImg.alt = name;
+          modalTitle.textContent =
+            name;
 
         }
 
-        if (modalLink) {
+
+        if (
+          modalImage &&
+          image
+        ) {
+
+          modalImage.src =
+            image.src;
+
+          modalImage.alt =
+            "OSOTTO " + name;
+
+        }
+
+
+        if (modalWhatsapp) {
 
           const message =
-`Merhaba, OSOTTO ${name} modeli hakkında toptan bilgi almak istiyorum.`;
 
-          modalLink.href =
+            `Merhaba, OSOTTO ${name} modeli hakkında toptan bilgi almak istiyorum.`;
+
+
+          modalWhatsapp.href =
+
             "https://wa.me/905431945858?text=" +
+
             encodeURIComponent(message);
 
         }
 
+
         if (
           modal &&
-          typeof modal.showModal === "function"
+          typeof modal.showModal ===
+          "function"
         ) {
+
           modal.showModal();
+
         }
 
       }
@@ -265,23 +394,27 @@ document
   });
 
 
-/* Modal kapatma */
-const closeButton =
-  document.querySelector(".close");
+/* MODAL KAPAT */
 
-if (closeButton && modal) {
+if (
+  modalClose &&
+  modal
+) {
 
-  closeButton.addEventListener(
+  modalClose.addEventListener(
     "click",
     () => {
+
       modal.close();
+
     }
   );
 
 }
 
 
-/* Modal dışına basınca kapanır */
+/* MODAL DIŞINA BASINCA KAPAT */
+
 if (modal) {
 
   modal.addEventListener(
@@ -291,14 +424,22 @@ if (modal) {
       const rect =
         modal.getBoundingClientRect();
 
+
       const outside =
+
         event.clientX < rect.left ||
+
         event.clientX > rect.right ||
+
         event.clientY < rect.top ||
+
         event.clientY > rect.bottom;
 
+
       if (outside) {
+
         modal.close();
+
       }
 
     }
