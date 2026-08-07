@@ -922,66 +922,47 @@ dialog h2{
 /* ALTIN ÜRÜN ÖZELLİKLERİ BUTONU */
 
 .product-button{
-
   appearance:none;
-
   -webkit-appearance:none;
 
-  border:
-    1px solid #8c672d;
+  position:relative;
 
-  border-radius:2px;
+  padding:7px 0 6px;
 
-  padding:
-    11px 16px;
+  border:0;
+  border-bottom:1px solid #9b783f;
+  border-radius:0;
+
+  background:transparent !important;
+  box-shadow:none;
+
+  color:#80612f !important;
 
   cursor:pointer;
 
-  color:#fff !important;
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #6d4b1a 0%,
-      #947034 38%,
-      #b08a48 68%,
-      #694718 100%
-    ) !important;
-
-  box-shadow:
-    0 7px 18px
-    rgba(99,70,26,.24);
-
-  text-transform:
-    uppercase;
-
+  text-transform:uppercase;
   font-size:10px;
+  font-weight:600;
+  letter-spacing:.14em;
 
-  font-weight:700;
-
-  letter-spacing:.10em;
-
-  transition:.25s;
-
+  transition:
+    color .25s ease,
+    border-color .25s ease,
+    letter-spacing .25s ease;
 }
 
 
 .product-button:hover{
+  color:#b18a4c !important;
 
-  color:#fff !important;
+  border-bottom-color:#b18a4c;
 
-  transform:
-    translateY(-2px);
+  letter-spacing:.17em;
 
-  filter:
-    brightness(1.15);
-
-  box-shadow:
-    0 11px 26px
-    rgba(99,70,26,.34);
-
-}
+  transform:none;
+  filter:none;
+  box-shadow:none;
+}}
 
 
 /* OSOTTO FARKI — SİYAH KALACAK */
