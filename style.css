@@ -25,27 +25,12 @@ body{
   overflow-x:hidden;
 
   background:
-    radial-gradient(
-      circle at 12% 8%,
-      rgba(255,255,255,.98) 0,
-      rgba(255,255,255,.72) 19%,
-      transparent 42%
-    ),
-    radial-gradient(
-      circle at 88% 30%,
-      rgba(210,210,207,.45) 0,
-      transparent 34%
-    ),
-    linear-gradient(
-      135deg,
-      #f8f8f6 0%,
-      #eeeeeb 48%,
-      #f7f7f4 100%
-    );
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.35) 28%, transparent 48%),
+    radial-gradient(circle at 82% 35%, rgba(185,185,180,.35) 0%, transparent 38%),
+    linear-gradient(135deg,#f3f1ec 0%,#e7e5df 48%,#f5f3ee 100%);
 
   background-attachment:fixed;
 }
-
 
 img{
   display:block;
