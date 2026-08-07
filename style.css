@@ -476,15 +476,27 @@ dialog h2{
 /* COLLECTION */
 
 .collection{
-  padding:
-    120px 5vw;
+  padding:120px 5vw;
 
   background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,255,255,.95) 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 65%,
+      rgba(190,185,175,.30) 0%,
+      transparent 35%
+    ),
     linear-gradient(
-      180deg,
-      rgba(247,247,245,.92),
-      rgba(234,234,231,.82)
+      135deg,
+      #eeeae3 0%,
+      #dedbd4 50%,
+      #f1eee8 100%
     );
+
+  position:relative;
 }
 
 
